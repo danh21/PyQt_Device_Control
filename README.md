@@ -1,17 +1,55 @@
-# Description
-GUI to control devices (lamp, fan, TV,...)
+# 📦 Project Name
 
-# Software
-- Qt Designer
-- Python
+> Device control.
 
-# How to use
-- Run *main.py* script
+---
 
-# Source
+## 📚 Table of Contents
+
+- [📦 Project Name](#-project-name)
+  - [📚 Table of Contents](#-table-of-contents)
+  - [📝 About](#-about)
+  - [✨ Features](#-features)
+  - [🚀 Getting Started](#-getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Source](#source)
+    - [Usage](#usage)
+
+---
+
+## 📝 About
+
+> This is a GUI panel to control devices.
+
+---
+
+## ✨ Features
+
+- ✅ Turn on/off lamp, TV, fan
+- ✅ Turn on/off music from speaker
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- List software dependencies or system requirements here:
+  - Qt Designer
+  - PyQt5
+  - VSCode IDE
+
+### Source
+
 - main.py: main program
-- main_screen.ui: GUI
-- resource: contains images, sound,... for app
+- main_screen.ui: GUI designed by Qt Designer
+- main_screen.py: generated from main_screen.ui
+- resource/: contains images, sound,... for app
 
-# Demo
+### Usage
+
+- Open workspace in VSCode
+- Open main.py
+- Run code
+- GUI:
 ![image](https://github.com/user-attachments/assets/8ae951f9-0b04-40b9-a1f9-7d5dae1b76f8)

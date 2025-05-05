@@ -1,27 +1,29 @@
 import sys
 from PyQt5 import QtGui
 from PyQt5.QtWidgets import QMainWindow, QApplication
-from PyQt5.uic import loadUi
 from PyQt5.QtMultimedia import QSoundEffect
 from PyQt5.QtCore import QUrl
+
+from main_screen import Ui_MainWindow
 
 
 
 class Main_screen(QMainWindow):
     def __init__ (self):   
-        super().__init__ ()     # Call parent class (QMainWindow) constructor
-        loadUi ("main_screen.ui",self)
+        super().__init__ ()
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
 
         # init button events 
-        self.onBtn_lamp.clicked.connect(self.lamp_on)
-        self.offBtn_lamp.clicked.connect(self.lamp_off)
-        self.onBtn_fan.clicked.connect(self.fan_on)
-        self.offBtn_fan.clicked.connect(self.fan_off)
-        self.onBtn_speaker.clicked.connect(self.speaker_on)
-        self.offBtn_speaker.clicked.connect(self.speaker_off)
-        self.onBtn_tv.clicked.connect(self.tv_on)
-        self.offBtn_tv.clicked.connect(self.tv_off)
-        self.closeBtn.clicked.connect(self.close)
+        self.ui.onBtn_lamp.clicked.connect(self.lamp_on)
+        self.ui.offBtn_lamp.clicked.connect(self.lamp_off)
+        self.ui.onBtn_fan.clicked.connect(self.fan_on)
+        self.ui.offBtn_fan.clicked.connect(self.fan_off)
+        self.ui.onBtn_speaker.clicked.connect(self.speaker_on)
+        self.ui.offBtn_speaker.clicked.connect(self.speaker_off)
+        self.ui.onBtn_tv.clicked.connect(self.tv_on)
+        self.ui.offBtn_tv.clicked.connect(self.tv_off)
+        self.ui.closeBtn.clicked.connect(self.close)
 
         # Initialize sound effect
         self.sound = QSoundEffect()
@@ -29,31 +31,31 @@ class Main_screen(QMainWindow):
         self.sound.setVolume(0.5)  # Volume level (0.0 to 1.0)
 
     def lamp_on(self):
-        self.lamp.setPixmap(QtGui.QPixmap("resource/images/lamp_on.png"))
+        self.ui.lamp.setPixmap(QtGui.QPixmap("resource/images/lamp_on.png"))
     def lamp_off(self):
-        self.lamp.setPixmap(QtGui.QPixmap("resource/images/lamp_off.png"))
+        self.ui.lamp.setPixmap(QtGui.QPixmap("resource/images/lamp_off.png"))
 
     def fan_on(self):
-        self.fan.setPixmap(QtGui.QPixmap("resource/images/fan_on.png"))
+        self.ui.fan.setPixmap(QtGui.QPixmap("resource/images/fan_on.png"))
     def fan_off(self):
-        self.fan.setPixmap(QtGui.QPixmap("resource/images/fan_off.png"))
+        self.ui.fan.setPixmap(QtGui.QPixmap("resource/images/fan_off.png"))
 
     def speaker_on(self):
-        self.speaker.setPixmap(QtGui.QPixmap("resource/images/speaker_on.png"))
+        self.ui.speaker.setPixmap(QtGui.QPixmap("resource/images/speaker_on.png"))
         self.sound.play()  
     def speaker_off(self):
-        self.speaker.setPixmap(QtGui.QPixmap("resource/images/speaker_off.png"))
+        self.ui.speaker.setPixmap(QtGui.QPixmap("resource/images/speaker_off.png"))
         self.sound.stop()
 
     def tv_on(self):
-        self.tv.setPixmap(QtGui.QPixmap("resource/images/TV_on.png"))
+        self.ui.tv.setPixmap(QtGui.QPixmap("resource/images/TV_on.png"))
     def tv_off(self):
-        self.tv.setPixmap(QtGui.QPixmap("resource/images/TV_off.png"))
+        self.ui.tv.setPixmap(QtGui.QPixmap("resource/images/TV_off.png"))
 
 
 
 if __name__ == '__main__':
-    app = QApplication (sys.argv) #init app
-    main = Main_screen()
-    main.show()
+    app = QApplication(sys.argv)
+    ui = Main_screen()
+    ui.show()
     sys.exit(app.exec())

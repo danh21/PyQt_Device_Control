@@ -180,7 +180,7 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>280</x>
+      <x>260</x>
       <y>0</y>
       <width>281</width>
       <height>71</height>
@@ -191,8 +191,17 @@
       <pointsize>20</pointsize>
      </font>
     </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
     <property name="text">
-     <string>DEVICE CONTROL</string>
+     <string>SMART HOME</string>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="fan">
