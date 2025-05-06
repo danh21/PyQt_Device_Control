@@ -48,4 +48,6 @@
 
 ### Usage
 
+- Generate file .exe: 
+  > pyinstaller --onefile --windowed --add-data "resource;resource" main.py
 - Run file dist/main.exe
