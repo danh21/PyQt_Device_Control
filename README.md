@@ -36,7 +36,7 @@
 
 - List software dependencies or system requirements here:
   - Qt Designer
-  - PyQt5
+  - PyQt5, Pyinstaller
   - VSCode IDE
 
 ### Source
