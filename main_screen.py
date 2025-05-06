@@ -9,6 +9,13 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import sys, os
+
+
+def resource_path(relative_path):
+    if hasattr(sys, '_MEIPASS'):
+        return os.path.join(sys._MEIPASS, relative_path)
+    return os.path.join(os.path.abspath("."), relative_path)
 
 
 class Ui_MainWindow(object):
@@ -20,7 +27,7 @@ class Ui_MainWindow(object):
         self.lamp = QtWidgets.QLabel(self.centralwidget)
         self.lamp.setGeometry(QtCore.QRect(20, 70, 151, 161))
         self.lamp.setText("")
-        self.lamp.setPixmap(QtGui.QPixmap("resource/images/lamp_off.png"))
+        self.lamp.setPixmap(QtGui.QPixmap(resource_path("resource/images/lamp_off.png")))
         self.lamp.setScaledContents(True)
         self.lamp.setObjectName("lamp")
         self.onBtn_lamp = QtWidgets.QPushButton(self.centralwidget)
@@ -83,19 +90,19 @@ class Ui_MainWindow(object):
         self.fan = QtWidgets.QLabel(self.centralwidget)
         self.fan.setGeometry(QtCore.QRect(220, 70, 151, 161))
         self.fan.setText("")
-        self.fan.setPixmap(QtGui.QPixmap("resource/images/fan_off.png"))
+        self.fan.setPixmap(QtGui.QPixmap(resource_path("resource/images/fan_off.png")))
         self.fan.setScaledContents(True)
         self.fan.setObjectName("fan")
         self.speaker = QtWidgets.QLabel(self.centralwidget)
         self.speaker.setGeometry(QtCore.QRect(430, 70, 151, 161))
         self.speaker.setText("")
-        self.speaker.setPixmap(QtGui.QPixmap("resource/images/speaker_off.png"))
+        self.speaker.setPixmap(QtGui.QPixmap(resource_path("resource/images/speaker_off.png")))
         self.speaker.setScaledContents(True)
         self.speaker.setObjectName("speaker")
         self.tv = QtWidgets.QLabel(self.centralwidget)
         self.tv.setGeometry(QtCore.QRect(630, 70, 151, 161))
         self.tv.setText("")
-        self.tv.setPixmap(QtGui.QPixmap("resource/images/TV_off.png"))
+        self.tv.setPixmap(QtGui.QPixmap(resource_path("resource/images/TV_off.png")))
         self.tv.setScaledContents(True)
         self.tv.setObjectName("tv")
         self.closeBtn = QtWidgets.QPushButton(self.centralwidget)
@@ -129,13 +136,3 @@ class Ui_MainWindow(object):
         self.offBtn_tv.setText(_translate("MainWindow", "OFF"))
         self.label.setText(_translate("MainWindow", "SMART HOME"))
         self.closeBtn.setText(_translate("MainWindow", "CLOSE"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())

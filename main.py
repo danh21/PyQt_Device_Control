@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 from PyQt5.QtMultimedia import QSoundEffect
 from PyQt5.QtCore import QUrl
 
-from main_screen import Ui_MainWindow
+from main_screen import *
 
 
 
@@ -27,30 +27,30 @@ class Main_screen(QMainWindow):
 
         # Initialize sound effect
         self.sound = QSoundEffect()
-        self.sound.setSource(QUrl.fromLocalFile("resource/sound/hustlanga_all_day.wav"))
+        self.sound.setSource(QUrl.fromLocalFile(resource_path("resource/sound/hustlanga_all_day.wav")))
         self.sound.setVolume(0.5)  # Volume level (0.0 to 1.0)
 
     def lamp_on(self):
-        self.ui.lamp.setPixmap(QtGui.QPixmap("resource/images/lamp_on.png"))
+        self.ui.lamp.setPixmap(QtGui.QPixmap(resource_path("resource/images/lamp_on.png")))
     def lamp_off(self):
-        self.ui.lamp.setPixmap(QtGui.QPixmap("resource/images/lamp_off.png"))
+        self.ui.lamp.setPixmap(QtGui.QPixmap(resource_path("resource/images/lamp_off.png")))
 
     def fan_on(self):
-        self.ui.fan.setPixmap(QtGui.QPixmap("resource/images/fan_on.png"))
+        self.ui.fan.setPixmap(QtGui.QPixmap(resource_path("resource/images/fan_on.png")))
     def fan_off(self):
-        self.ui.fan.setPixmap(QtGui.QPixmap("resource/images/fan_off.png"))
+        self.ui.fan.setPixmap(QtGui.QPixmap(resource_path("resource/images/fan_off.png")))
 
     def speaker_on(self):
-        self.ui.speaker.setPixmap(QtGui.QPixmap("resource/images/speaker_on.png"))
+        self.ui.speaker.setPixmap(QtGui.QPixmap(resource_path("resource/images/speaker_on.png")))
         self.sound.play()  
     def speaker_off(self):
-        self.ui.speaker.setPixmap(QtGui.QPixmap("resource/images/speaker_off.png"))
+        self.ui.speaker.setPixmap(QtGui.QPixmap(resource_path("resource/images/speaker_off.png")))
         self.sound.stop()
 
     def tv_on(self):
-        self.ui.tv.setPixmap(QtGui.QPixmap("resource/images/TV_on.png"))
+        self.ui.tv.setPixmap(QtGui.QPixmap(resource_path("resource/images/TV_on.png")))
     def tv_off(self):
-        self.ui.tv.setPixmap(QtGui.QPixmap("resource/images/TV_off.png"))
+        self.ui.tv.setPixmap(QtGui.QPixmap(resource_path("resource/images/TV_off.png")))
 
 
 

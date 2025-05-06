@@ -48,6 +48,4 @@
 
 ### Usage
 
-- Open workspace in VSCode
-- Open main.py
-- Run code
+- Run file dist/main.exe
